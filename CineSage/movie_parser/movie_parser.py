@@ -33,7 +33,7 @@ parser = PydanticOutputParser(pydantic_object=Movie)
 prompt = ChatPromptTemplate.from_messages([
    ('system',"""
 Extract movie information from the paragraph
-    {format_instruuctions}
+    {format_instructions}
 """),
    ("human","{paragraph}")
 ]
@@ -47,7 +47,7 @@ chain = prompt | model
  
 response = chain.invoke(
     {"paragraph": paragraph,
-     'format_instruuctions' : parser.get_format_instructions()
+     'format_instructions' : parser.get_format_instructions()
      }
 )
 
