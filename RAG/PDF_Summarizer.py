@@ -1,3 +1,5 @@
+# ----------- LLM APPLICATION -----------------
+
 from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
 from langchain_community.document_loaders import PyPDFLoader
