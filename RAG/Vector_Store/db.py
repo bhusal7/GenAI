@@ -44,6 +44,7 @@ for r in result:
     print(r.metadata)
     
 retriver = vector_store.as_retriever()
+# yaha as_retriever() vitra kai use vako chaina so yo "Similarity Search" strategy ko Algo. ho
 
 docs = retriver.invoke("Explain AI Agents.")
 
