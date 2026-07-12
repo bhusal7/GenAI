@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
-from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
