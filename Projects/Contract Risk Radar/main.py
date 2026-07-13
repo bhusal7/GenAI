@@ -122,7 +122,7 @@ Analyze the contract carefully and answer using only the provided context.
     )
 ])
 
-chain = template | llm_model
+chain = template | llm_model | parser
 
 messages = []
 
@@ -142,13 +142,11 @@ while True:
     retrieved_docs = multi_query.invoke(question)
     context_str = "\n\n".join(doc.page_content for doc in retrieved_docs)
 
-    prompt = template.invoke({
+    response = chain.invoke({
         "context": context_str,
         "question": question,
         "format_instructions": format_instructions
     })
-
-    response = llm_model.invoke(prompt)
 
     parse_respond = parser.parse(
         response.content.replace("```json", "").replace("```", "").strip()
