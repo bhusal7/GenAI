@@ -20,7 +20,7 @@ def run_research_pipeline(topic:str) -> dict:
     
      # Step-2 : reader agent working
     print("\n" + "="*50)
-    print("Step 1 - Search Agent is scraping top resources ...")
+    print("Step 2 - Search Agent is scraping top resources ...")
     print("="*50)
     
     reader_agent = build_reader_agent()
