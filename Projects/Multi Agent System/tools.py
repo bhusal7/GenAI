@@ -1,5 +1,6 @@
 from langchain.tools import tool
 import os
+import datetime
 from functools import lru_cache
 import requests
 from rich import print
@@ -16,7 +17,7 @@ def cache_web_search(query:str):
     """Search the web for recent and reliable information an a topic. Returns Titles, URLs , Snippets"""
     results = tavily_client.search(query=query,max_results=5)
     
-    return results
+    return results  
 
 
 @tool
@@ -48,6 +49,20 @@ def scrape_url(url: str) -> str:
         return f"Could not scrape URL: {str(e)}"
     
 print(scrape_url.invoke("https://www.bbc.com/news/topics/cx2jyv8j8gwt"))
+
+
+@tool
+def save_report(content: str, filename: str) -> str:
+    """Save the final research report as a markdown (.md) file. filename should not include extension."""
+    os.makedirs("reports", exist_ok=True)
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    filepath = f"reports/{filename}_{timestamp}.md"
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    return f"Report saved to {filepath}"
+
 
 
         
