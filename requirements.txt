@@ -43,3 +43,29 @@ rich>=13.7.0
 tenacity>=8.2.0
 orjson>=3.9.0
 html5lib>=1.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+streamlit>=1.35
+pandas>=2.0
+numpy>=1.24
+plotly>=5.20
+statsmodels>=0.14
+
+# Your existing agent stack (add/adjust based on what agents.py / tools.py actually use)
+# langchain
+# langgraph
+# langchain-openai
+# langchain-anthropic
