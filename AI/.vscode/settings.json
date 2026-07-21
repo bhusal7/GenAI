@@ -1,0 +1,5 @@
+{
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/AI/AI-Code-Assistant"
+  ]
+}
