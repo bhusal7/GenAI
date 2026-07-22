@@ -18,7 +18,7 @@ import uuid
 import streamlit as st
 from langgraph.types import Command
 
-from city_intelligence_create_agent import chain
+from Projects.City_Intelligent_.city_intelligence_create_agent import chain
 
 # ---------------------------------------------------------------------------
 # PAGE CONFIG
