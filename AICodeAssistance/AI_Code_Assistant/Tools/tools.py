@@ -2,18 +2,18 @@ from __future__ import annotations
 
 import datetime
 from pathlib import Path
-from typing import Optional
 
 from langchain.tools import tool
 
-from AI_Code_Assistant.config import mistral_llm
+from config import mistral_llm
 
-# Set this once from pipeline.py after building RAG
 _retriever = None
 
 
 def set_retriever(retriever) -> None:
-    """Store retriever globally so tools can use it."""
+    """
+    Store retriever globally so tools can use it.
+    """
     global _retriever
     _retriever = retriever
 

@@ -1,4 +1,4 @@
-from AI_Code_Assistant.config import SEARCH_TYPE, SEARCH_KWARGS
+from config import SEARCH_TYPE, SEARCH_KWARGS
 from langchain_core.vectorstores import VectorStoreRetriever
 
 def get_retriever(vectordb) -> VectorStoreRetriever:

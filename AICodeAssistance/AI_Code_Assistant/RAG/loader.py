@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import DirectoryLoader
-from pathlib import Path
+
 
 def load_single_file(file_path:str):
     """
@@ -16,6 +16,9 @@ def load_single_file(file_path:str):
     
     
 def load_code_directory(directory_path:str):
+    """
+    Load code files from a directory.
+    """
     
     documents = []
     
@@ -34,8 +37,10 @@ def load_code_directory(directory_path:str):
     for pattern in patterns:
         loader = DirectoryLoader(
             path=directory_path,
-            glob="**/*.py",
-            loader_cls=TextLoader
+            glob=pattern,
+            loader_cls=TextLoader,
+            loader_kwargs={"encoding": "utf-8"},
+            silent_errors=True
             )
         documents = loader.load()
     
