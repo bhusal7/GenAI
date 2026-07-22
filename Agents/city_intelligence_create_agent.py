@@ -1,4 +1,4 @@
-# city intelligence system
+# City intelligence system
 
 import os
 import requests
