@@ -190,9 +190,9 @@ if run_clicked and uploaded_file is not None:
         except OSError:
             pass
 
-# ************************
+# ***********************
 # Results
-# ************************
+# ***********************
 state = st.session_state.pipeline_state
 if state:
     st.divider()
